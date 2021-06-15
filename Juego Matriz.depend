@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1623723291 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+
+1623723285 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.cpp
+	<iostream>
+	"funciones.h"
+
+1623723158 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.h
+
