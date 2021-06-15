@@ -32,7 +32,7 @@ int main()
 
 
 
-    cout <<"Ingrese una ocpion: "<<endl;
+    cout <<"Ingrese una opcion: "<<endl;
     cin >>opcion;
 
     while (opcion != 4)
