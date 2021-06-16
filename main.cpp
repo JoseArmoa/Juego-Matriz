@@ -3,6 +3,7 @@ using namespace std;
 #include <cstdlib>
 #include <ctime>
 #include "funciones.h"
+#include "rlutil.h"
 
 
 
@@ -40,8 +41,11 @@ int main()
         switch(opcion)
         {
         case 1:
+            pilas = 3;
             system("cls");
             cargarDatos(Usuario);
+            rlutil::cls();
+            mostrarJuego(matriz,Usuario,pilas);
 
         {
 
@@ -57,7 +61,7 @@ int main()
 
         }
 
-        cout <<"Ingrese una ocpion: "<<endl;
+        cout <<"Ingrese una opcion: "<<endl;
         cin >>opcion;
     }
 

@@ -1,13 +1,29 @@
 # depslib dependency file v1.0
-1623723291 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\main.cpp
+1623809256 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"funciones.h"
+	"rlutil.h"
 
-1623723583 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.cpp
+1623809131 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.cpp
 	<iostream>
 	"funciones.h"
+	"rlutil.h"
 
-1623723158 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.h
+1623809823 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.h
+
+1571584339 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 
