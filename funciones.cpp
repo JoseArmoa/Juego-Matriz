@@ -3,7 +3,7 @@ using namespace std;
 #include "funciones.h"
 #include "rlutil.h"
 
-void cargarMatriz(char m[][6], int tam)
+void cargarMatrizCaract(char mc[][6], int mn[][6], int tam)
 {
     int i, x, n;
     for(i=0; i < tam; i++)
@@ -11,7 +11,25 @@ void cargarMatriz(char m[][6], int tam)
         for(x=0; x<tam; x++)
         {
 
-            n = (rand()%10)+48;
+            n = mn[i][x] + 48 ;
+            mc[i][x]= n;
+
+        }
+
+    }
+
+}
+
+
+void cargarMatrizNum(int m[][6], int tam)
+{
+    int i, x, n;
+    for(i=0; i < tam; i++)
+    {
+        for(x=0; x<tam; x++)
+        {
+
+            n = rand()%10;
             m[i][x]= n;
 
         }
@@ -67,9 +85,11 @@ void vida(int n)
         cout << vida << " " << vida << " " << vida;
         break;
     case 2:
+        cout << vida << " " << vida;
         break;
 
     case 1:
+        cout << vida;
         break;
 
     }
@@ -93,9 +113,85 @@ void mostrarMatriz(char m [][6]){
         cout << endl;
     }
 
+
+}
+
+void comienzoJuego(char mc[][6], int mn[][6], int p){
+
+    int fila, columna, direccion;
+    char operador;
+    bool r;
+
+    cout << "Ingrese Numero de fila: ";
+    cin  >> fila;
+
+    cout << "Ingrese Numero de columna: ";
+    cin  >> columna;
+
+    cout << "Ingrese  Operacion a validar: ";
+    cin  >> operador;
+
+    cout << "Ingrese direccion: ";
+    cin  >> direccion;
+
+    fila--;
+    columna--;
+
+
+    r = validarDatos(mc,fila,columna,direccion);
+
+    if(r){
+        cout <<"true";
+    }else{
+        cout <<"false";
+    } //esto es solo para probar
 }
 
 
+bool validarDatos(char mc[][6], int x, int y, int o){
+
+    int fila2, fila3, columna2, columna3;
+    switch(o){
+
+    case 8:
+        fila2 = x - 1;
+        columna2 = y;
+        fila3 = x - 2;
+        columna3 = y;
+         break;
+
+    case 6:
+        fila2 = x;
+        columna2 = y + 1;
+        fila3 = x;
+        columna3 = y + 2;
+         break;
+
+    case 2:
+        fila2 = x + 1;
+        columna2 = y;
+        fila3 = x + 2;
+        columna3 = y;
+         break;
+
+    case 4:
+        fila2 = x;
+        columna2 = y - 1;
+        fila3 = x;
+        columna3 = y - 2;
+          break;
+
+
+    }
+
+    if ((mc[x][y] >= 48 && mc[x][y] <= 57) && (mc[fila2][columna2] >= 48 && mc[fila2][columna2] <= 57) && (mc[fila3][columna3] >= 48 && mc[fila3][columna3] <= 57 )   ){
+        return true;
+    } else {
+        return false;
+    }
+
+
+}
 
 
 

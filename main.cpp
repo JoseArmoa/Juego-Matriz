@@ -11,9 +11,11 @@ int main()
 {
     srand(time(0));
     int opcion, pilas;
-    char matriz[6][6];
+    int matrizNumeros [6][6];
+    char matrizCaracteres[6][6];
     char Usuario [30];
-    cargarMatriz(matriz, 6);
+    cargarMatrizNum(matrizNumeros, 6);
+    cargarMatrizCaract(matrizCaracteres,matrizNumeros, 6);
 
 
 
@@ -45,7 +47,16 @@ int main()
             system("cls");
             cargarDatos(Usuario);
             rlutil::cls();
-            mostrarJuego(matriz,Usuario,pilas);
+            while(pilas > 0){
+
+            matrizCaracteres[0][1] = 0;
+
+            mostrarJuego(matrizCaracteres,Usuario,pilas);
+            comienzoJuego(matrizCaracteres,matrizNumeros,pilas);
+
+            }
+
+
 
         {
 
