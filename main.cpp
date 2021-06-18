@@ -49,7 +49,7 @@ int main()
             rlutil::cls();
             while(pilas > 0){
 
-            matrizCaracteres[0][1] = 0;
+            matrizCaracteres[3][3] = 0;
 
             mostrarJuego(matrizCaracteres,Usuario,pilas);
             comienzoJuego(matrizCaracteres,matrizNumeros,pilas);
