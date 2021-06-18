@@ -11,6 +11,6 @@ void vida(int ); //Muestra las vidas disponibles.
 void mostrarMatriz(char [][6]); //Muestra Matriz de caracteres.
 void comienzoJuego(char [][6], int [][6], int ); //Codigo del Juego.
 bool validarDatos (char [][6], int, int, int);
-
-
+//bool validarEcuacion(int [][6], int, int, int);
+void cargarDireccion(int, int, int *, int *, int *, int *, int);
 #endif // FUNCIONES_H_INCLUDED

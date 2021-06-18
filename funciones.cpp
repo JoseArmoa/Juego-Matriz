@@ -140,6 +140,7 @@ void comienzoJuego(char mc[][6], int mn[][6], int p){
 
     r = validarDatos(mc,fila,columna,direccion);
 
+
     if(r){
         cout <<"true";
     }else{
@@ -151,38 +152,8 @@ void comienzoJuego(char mc[][6], int mn[][6], int p){
 bool validarDatos(char mc[][6], int x, int y, int o){
 
     int fila2, fila3, columna2, columna3;
-    switch(o){
 
-    case 8:
-        fila2 = x - 1;
-        columna2 = y;
-        fila3 = x - 2;
-        columna3 = y;
-         break;
-
-    case 6:
-        fila2 = x;
-        columna2 = y + 1;
-        fila3 = x;
-        columna3 = y + 2;
-         break;
-
-    case 2:
-        fila2 = x + 1;
-        columna2 = y;
-        fila3 = x + 2;
-        columna3 = y;
-         break;
-
-    case 4:
-        fila2 = x;
-        columna2 = y - 1;
-        fila3 = x;
-        columna3 = y - 2;
-          break;
-
-
-    }
+    cargarDireccion(x, y, &fila2, &columna2, &fila3, &columna3, o);
 
     if ((mc[x][y] >= 48 && mc[x][y] <= 57) && (mc[fila2][columna2] >= 48 && mc[fila2][columna2] <= 57) && (mc[fila3][columna3] >= 48 && mc[fila3][columna3] <= 57 )   ){
         return true;
@@ -193,5 +164,47 @@ bool validarDatos(char mc[][6], int x, int y, int o){
 
 }
 
+
+
+
+void cargarDirecion(int x, int y, int *f2, int *c2, int *f3, int *c3, int d){
+
+
+
+
+    switch(d){
+
+    case 8:
+        f2 = x - 1;
+        c2 = y;
+        f3 = x - 2;
+        c3 = y;
+         break;
+
+    case 6:
+        f2 = x;
+        c2 = y + 1;
+        f = x;
+        c = y + 2;
+         break;
+
+    case 2:
+        f = x + 1;
+        c = y;
+        f = x + 2;
+        c = y;
+         break;
+
+    case 4:
+        f = x;
+        c = y - 1;
+        f = x;
+        c = y - 2;
+          break;
+
+
+    }
+
+}
 
 
