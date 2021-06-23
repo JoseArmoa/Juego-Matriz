@@ -2,6 +2,7 @@
 using namespace std;
 #include "funciones.h"
 #include "rlutil.h"
+#include "matrizcolor.h"
 
 void cargarMatrizCaract(char mc[][6], int mn[][6], int tam)
 {
@@ -47,9 +48,21 @@ void cargarDatos(char nombre[])
 
 }
 
+void seleccionColor(int &c){
+
+    cout <<"1- Azul" <<endl;
+    cout <<"2- Rojo" <<endl;
+    cout <<"3- Blanco" <<endl;
+    cout <<endl;
+    cout <<"-----------------------------" <<endl;
+    cout <<endl;
+    cout <<"Elije un color: ";
+    cin >>c;
+
+}
 
 
-void mostrarJuego(char m[][6], char v[], int p)
+void mostrarJuego(char m[][6], char v[], int &p, int c)
 {
     rlutil::locate(2, 1);
     cout << v ;
@@ -58,7 +71,20 @@ void mostrarJuego(char m[][6], char v[], int p)
     vida(p);
 
 
-    mostrarMatriz(m);
+    switch(c){
+    case 1:
+        mostrarAzul(m);
+        break;
+
+    case 2:
+        mostrarRojo(m);
+        break;
+
+    case 3:
+        mostrarBlanco(m);
+        break;
+
+    }
 
 
 
@@ -96,27 +122,9 @@ void vida(int n)
 
 }
 
-void mostrarMatriz(char m [][6]){
-    int i, x, y , b;
-    y = 3;
-
-    for(i=0; i<6; i++){
-        x = 30;
-        for(b=0; b<6; b++){
-
-            rlutil::locate(x,y);
-            cout << m[i][b] << " " ;
-            x+=2;
-        }
-        y+=1;
-
-        cout << endl;
-    }
 
 
-}
-
-void comienzoJuego(char mc[][6], int mn[][6], int p){
+void comienzoJuego(char mc[][6], int mn[][6], int &p){
 
     int fila, columna, direccion;
     char operador;

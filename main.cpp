@@ -6,11 +6,10 @@ using namespace std;
 #include "rlutil.h"
 
 
-
 int main()
 {
     srand(time(0));
-    int opcion, pilas;
+    int opcion, pilas, color;
     int matrizNumeros [6][6];
     char matrizCaracteres[6][6];
     char Usuario [30];
@@ -47,11 +46,14 @@ int main()
             system("cls");
             cargarDatos(Usuario);
             rlutil::cls();
+            seleccionColor(color);
+            rlutil::cls();
+
             while(pilas > 0){
 
             matrizCaracteres[3][3] = 0;
 
-            mostrarJuego(matrizCaracteres,Usuario,pilas);
+            mostrarJuego(matrizCaracteres,Usuario, pilas, color);
             comienzoJuego(matrizCaracteres,matrizNumeros,pilas);
 
             }

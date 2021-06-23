@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1623983547 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\main.cpp
+1624315946 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"funciones.h"
 	"rlutil.h"
 
-1623983704 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.cpp
+1624315759 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"
+	"matrizcolor.h"
 
-1623982877 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.h
+1624315892 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\funciones.h
 
 1571584339 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\rlutil.h
 	<iostream>
@@ -26,4 +27,11 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1624311244 c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\matrizcolor.h
+
+1624314855 source:c:\users\josel\onedrive\escritorio\projecto 2do parcial\juego matriz\matrizcolor.cpp
+	<iostream>
+	"rlutil.h"
+	"matrizcolor.h"
 
