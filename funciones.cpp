@@ -44,13 +44,18 @@ void seleccionColor(int &c){
 }
 
 
-void mostrarJuego(int m[][6], char v[], int &p, int c)
+void mostrarJuego(int m[][6], char v[], int &p, int c, int pts)
 {
     rlutil::locate(2, 1);
     cout << v ;
 
+    rlutil::locate(30, 1);
+    cout <<"Puntos: " << pts;
+
     rlutil::locate(60,1 );
     vida(p);
+
+
 
 
     switch(c){
@@ -108,7 +113,7 @@ void vida(int n)
 
 void comienzoJuego(int mn[][6], int &p){
 
-    int fila, columna, direccion;
+    int fila, columna, direccion, fila2, fila3, columna2, columna3;
     char operador;
     bool r;
 
@@ -128,13 +133,24 @@ void comienzoJuego(int mn[][6], int &p){
         fila--;
         columna--;
 
+        cargarDireccion(direccion, fila, columna, fila2, columna2, fila3, columna3);
 
-        r = validarDatos(mn,fila,columna,direccion);
+
+        r = validarDatos(mn,fila,columna, fila2, columna2, fila3, columna3);
 
 
         if(r)
         {
-            cout <<"true";
+           r = validarOperacion(mn, fila, columna, fila2, columna2, fila3, columna3, operador);
+           if(r){
+                    cout << "True";
+                    rlutil::anykey();
+                } else {
+                    cout <<"La operacion no es valida."<<endl;
+                    cout <<"!A perdido una pila!!! :("<<endl;
+                    rlutil::anykey();
+                    p--;
+                }
         }
         else
         {
@@ -150,13 +166,13 @@ void comienzoJuego(int mn[][6], int &p){
 }
 
 
-bool validarDatos(int mc[][6], int x, int y, int o){
+bool validarDatos(int mc[][6], int x, int y, int f2, int c2, int f3, int c3){
 
-    int fila2, fila3, columna2, columna3;
 
-    cargarDireccion(o, x, y, fila2, columna2, fila3, columna3);
 
-    if ((mc[x][y] >= 0 && mc[x][y] <= 9) && (mc[fila2][columna2] >= 0 && mc[fila2][columna2] <= 9) && (mc[fila3][columna3] >= 0 && mc[fila3][columna3] <= 9 )   ){
+
+
+    if ((mc[x][y] >= 0 && mc[x][y] <= 9) && (mc[f2][c2] >= 0 && mc[f2][c2] <= 9) && (mc[f3][c3] >= 0 && mc[f3][c3] <= 9 )   ){
         return true;
     } else {
         return false;
@@ -205,4 +221,52 @@ void cargarDireccion( int d, int x, int y, int &f2, int &c2, int &f3, int &c3){
 
 }
 
+bool validarOperacion(int m[][6], int f, int c, int f2, int c2, int f3, int c3, char o){
+        int r;
+        switch(o){
+            case '+':
+                r = m[f][c] + m[f2][c2];
+                if (r == m[f3][c3]){
+                    return true;
+                    } else {
+                    return false;
+                    }
+            break;
 
+            case '-':
+                r = m[f][c] - m[f2][c2];
+                if (r == m[f3][c3]){
+                    return true;
+                    } else {
+                    return false;
+                    }
+                break;
+
+            case '*':
+                r = m[f][c] * m[f2][c2];
+                if (r == m[f3][c3]){
+                    return true;
+                    } else {
+                    return false;
+                    }
+                break;
+
+            case '/':
+                r = m[f][c] / m[f2][c2];
+                if (r == m[f3][c3]){
+                    return true;
+                    } else {
+                    return false;
+                    }
+                break;
+
+            case '%':
+                r = m[f][c] % m[f2][c2];
+                if (r == m[f3][c3]){
+                    return true;
+                    } else {
+                    return false;
+                    }
+                break;
+        }
+}

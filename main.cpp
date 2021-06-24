@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     srand(time(0));
-    int opcion, pilas, color;
+    int opcion, pilas, color, puntaje;
     int matrizNumeros [6][6];
     char Usuario [30];
     cargarMatrizNum(matrizNumeros, 6);
@@ -49,6 +49,7 @@ int main()
         {
         case 1:
             pilas = 3;
+            puntaje = 0;
             system("cls");
             cargarDatos(Usuario);
             rlutil::cls();
@@ -58,7 +59,7 @@ int main()
             while(pilas !=0){
                 matrizNumeros[2][3]= 99;
 
-                mostrarJuego(matrizNumeros,Usuario, pilas, color);
+                mostrarJuego(matrizNumeros,Usuario, pilas, color, puntaje);
                 comienzoJuego(matrizNumeros,pilas);
                 rlutil::cls();
             }
