@@ -11,13 +11,17 @@ int main()
     srand(time(0));
     int opcion, pilas, color;
     int matrizNumeros [6][6];
-    char matrizCaracteres[6][6];
     char Usuario [30];
     cargarMatrizNum(matrizNumeros, 6);
-    cargarMatrizCaract(matrizCaracteres,matrizNumeros, 6);
 
 
 
+    rlutil::setBackgroundColor(rlutil::DARKGREY);
+    rlutil::setColor(rlutil::RED);
+    rlutil::saveDefaultColor();
+
+
+    rlutil::cls();
 
 
     cout <<"        *****************************"      <<endl;
@@ -26,18 +30,20 @@ int main()
     cout <<"       *                             *"      <<endl;
     cout <<"        *****************************"      <<endl<<endl<<endl;
 
+
+    cout <<"----------------------"<<endl;
     cout <<"1- Jugar"<<endl;
     cout <<"2- Estadisticas"<<endl;
     cout <<"3- Creditos"<<endl;
-    cout <<"4- Salir"<<endl;
+    cout <<"0- Salir"<<endl;
 
-
+    cout <<"----------------------"<<endl;
 
 
     cout <<"Ingrese una opcion: "<<endl;
     cin >>opcion;
 
-    while (opcion != 4)
+    while (opcion != 0)
     {
         switch(opcion)
         {
@@ -49,28 +55,22 @@ int main()
             seleccionColor(color);
             rlutil::cls();
 
-            while(pilas > 0){
+            while(pilas !=0){
+                matrizNumeros[2][3]= 99;
 
-            matrizCaracteres[3][3] = 0;
-
-            mostrarJuego(matrizCaracteres,Usuario, pilas, color);
-            comienzoJuego(matrizCaracteres,matrizNumeros,pilas);
-
+                mostrarJuego(matrizNumeros,Usuario, pilas, color);
+                comienzoJuego(matrizNumeros,pilas);
+                rlutil::cls();
             }
 
 
-
-        {
-
-
-        } break;
+            break;
         case 2:
-        {} break;
+            break;
         case 3:
-        {} break;
-        case 4: {
-
-        }break;
+            break;
+        case 4:
+            break;
 
         }
 

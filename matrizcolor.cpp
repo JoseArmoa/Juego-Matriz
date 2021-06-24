@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void mostrarRojo(char m[][6]){
+void mostrarRojo(int m[][6]){
 
     int posx = 10;
     int posy = 5;
@@ -34,7 +34,7 @@ void mostrarRojo(char m[][6]){
 	switch (m[i][b])
 	{
 
-    case '0':
+    case 0:
         rlutil::locate(posx + 2,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -69,7 +69,7 @@ void mostrarRojo(char m[][6]){
 
         break;
 
-	case '1':
+	case 1:
 		rlutil::locate(posx + 4,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -95,7 +95,7 @@ void mostrarRojo(char m[][6]){
 		cout << (char)223;
         break;
 
-    case '2':
+    case 2:
         rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -138,7 +138,7 @@ void mostrarRojo(char m[][6]){
 		cout << (char)223;
 
         break;
-    case '3':
+    case 3:
         rlutil::locate(posx + 5,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -170,7 +170,7 @@ void mostrarRojo(char m[][6]){
 		break;
 
 
-    case '4':
+    case 4:
         rlutil::locate(posx + 2,posy + 1);
 		//cout << "■";
 		cout << (char)219;
@@ -201,7 +201,7 @@ void mostrarRojo(char m[][6]){
 
 		break;
 
-    case '5':
+    case 5:
         rlutil::locate(posx + 2,posy + 1);
 		//cout << "■";
 		cout << (char)219;
@@ -244,7 +244,7 @@ void mostrarRojo(char m[][6]){
 
         break;
 
-    case '6':
+    case 6:
         rlutil::locate(posx + 4,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -279,7 +279,7 @@ void mostrarRojo(char m[][6]){
 
         break;
 
-    case '7':
+    case 7:
 
         rlutil::locate(posx + 5,posy + 1);
 		//cout << "■";
@@ -311,7 +311,7 @@ void mostrarRojo(char m[][6]){
         break;
 
 
-	case '8':
+	case 8:
 	    rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -353,7 +353,7 @@ void mostrarRojo(char m[][6]){
 		cout << (char)223;
         break;
 
-    case '9':
+    case 9:
         rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -400,10 +400,14 @@ void mostrarRojo(char m[][6]){
 
     }
 
+                rlutil::setBackgroundColor(rlutil::DARKGREY);
+                rlutil::setColor(rlutil::RED);
+                rlutil::saveDefaultColor();
+
 cout << endl << endl;
 }
 
-void mostrarAzul(char m[][6]){
+void mostrarAzul(int m[][6]){
 
     int posx = 10;
     int posy = 5;
@@ -433,7 +437,7 @@ void mostrarAzul(char m[][6]){
 	switch (m[i][b])
 	{
 
-    case '0':
+    case 0:
         rlutil::locate(posx + 2,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -468,7 +472,7 @@ void mostrarAzul(char m[][6]){
 
         break;
 
-	case '1':
+	case 1:
 		rlutil::locate(posx + 4,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -494,7 +498,7 @@ void mostrarAzul(char m[][6]){
 		cout << (char)223;
         break;
 
-    case '2':
+    case 2:
         rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -537,7 +541,7 @@ void mostrarAzul(char m[][6]){
 		cout << (char)223;
 
         break;
-    case '3':
+    case 3:
         rlutil::locate(posx + 5,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -569,7 +573,7 @@ void mostrarAzul(char m[][6]){
 		break;
 
 
-    case '4':
+    case 4:
         rlutil::locate(posx + 2,posy + 1);
 		//cout << "■";
 		cout << (char)219;
@@ -600,7 +604,7 @@ void mostrarAzul(char m[][6]){
 
 		break;
 
-    case '5':
+    case 5:
         rlutil::locate(posx + 2,posy + 1);
 		//cout << "■";
 		cout << (char)219;
@@ -643,7 +647,7 @@ void mostrarAzul(char m[][6]){
 
         break;
 
-    case '6':
+    case 6:
         rlutil::locate(posx + 4,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -678,7 +682,7 @@ void mostrarAzul(char m[][6]){
 
         break;
 
-    case '7':
+    case 7:
 
         rlutil::locate(posx + 5,posy + 1);
 		//cout << "■";
@@ -710,7 +714,7 @@ void mostrarAzul(char m[][6]){
         break;
 
 
-	case '8':
+	case 8:
 	    rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -752,7 +756,7 @@ void mostrarAzul(char m[][6]){
 		cout << (char)223;
         break;
 
-    case '9':
+    case 9:
         rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -798,12 +802,15 @@ void mostrarAzul(char m[][6]){
            posy += 4;
 
     }
+    rlutil::setBackgroundColor(rlutil::DARKGREY);
+    rlutil::setColor(rlutil::RED);
+    rlutil::saveDefaultColor();
 
 cout << endl << endl;
 
 }
 
-void mostrarBlanco(char m[][6]){
+void mostrarBlanco(int m[][6]){
 
     int posx = 10;
     int posy = 5;
@@ -828,12 +835,12 @@ void mostrarBlanco(char m[][6]){
                 }
 
     rlutil::setBackgroundColor(rlutil::WHITE);
-    rlutil::setColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::RED);
 
 	switch (m[i][b])
 	{
 
-    case '0':
+    case 0:
         rlutil::locate(posx + 2,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -868,7 +875,7 @@ void mostrarBlanco(char m[][6]){
 
         break;
 
-	case '1':
+	case 1:
 		rlutil::locate(posx + 4,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -894,7 +901,7 @@ void mostrarBlanco(char m[][6]){
 		cout << (char)223;
         break;
 
-    case '2':
+    case 2:
         rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -937,7 +944,7 @@ void mostrarBlanco(char m[][6]){
 		cout << (char)223;
 
         break;
-    case '3':
+    case 3:
         rlutil::locate(posx + 5,posy + 2);
 		//cout << "■";
 		cout << (char)219;
@@ -969,7 +976,7 @@ void mostrarBlanco(char m[][6]){
 		break;
 
 
-    case '4':
+    case 4:
         rlutil::locate(posx + 2,posy + 1);
 		//cout << "■";
 		cout << (char)219;
@@ -1000,7 +1007,7 @@ void mostrarBlanco(char m[][6]){
 
 		break;
 
-    case '5':
+    case 5:
         rlutil::locate(posx + 2,posy + 1);
 		//cout << "■";
 		cout << (char)219;
@@ -1043,7 +1050,7 @@ void mostrarBlanco(char m[][6]){
 
         break;
 
-    case '6':
+    case 6:
         rlutil::locate(posx + 4,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -1078,7 +1085,7 @@ void mostrarBlanco(char m[][6]){
 
         break;
 
-    case '7':
+    case 7:
 
         rlutil::locate(posx + 5,posy + 1);
 		//cout << "■";
@@ -1110,7 +1117,7 @@ void mostrarBlanco(char m[][6]){
         break;
 
 
-	case '8':
+	case 8:
 	    rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -1152,7 +1159,7 @@ void mostrarBlanco(char m[][6]){
 		cout << (char)223;
         break;
 
-    case '9':
+    case 9:
         rlutil::locate(posx + 3,posy + 1);
 		//cout << "■";
 		cout << (char)223;
@@ -1198,7 +1205,9 @@ void mostrarBlanco(char m[][6]){
            posy += 4;
 
     }
-
+    rlutil::setBackgroundColor(rlutil::DARKGREY);
+    rlutil::setColor(rlutil::RED);
+    rlutil::saveDefaultColor();
 cout << endl << endl;
 
 }

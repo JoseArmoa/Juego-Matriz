@@ -35,3 +35,39 @@
 	"rlutil.h"
 	"matrizcolor.h"
 
+1624496914 source:c:\users\sonypc\documents\github\juego-matriz\funciones.cpp
+	<iostream>
+	"funciones.h"
+	"rlutil.h"
+	"matrizcolor.h"
+
+1624496914 c:\users\sonypc\documents\github\juego-matriz\funciones.h
+
+1624491586 c:\users\sonypc\documents\github\juego-matriz\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624496273 c:\users\sonypc\documents\github\juego-matriz\matrizcolor.h
+
+1624496914 source:c:\users\sonypc\documents\github\juego-matriz\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"funciones.h"
+	"rlutil.h"
+
+1624496914 source:c:\users\sonypc\documents\github\juego-matriz\matrizcolor.cpp
+	<iostream>
+	"rlutil.h"
+	"matrizcolor.h"
+

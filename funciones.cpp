@@ -4,24 +4,6 @@ using namespace std;
 #include "rlutil.h"
 #include "matrizcolor.h"
 
-void cargarMatrizCaract(char mc[][6], int mn[][6], int tam)
-{
-    int i, x, n;
-    for(i=0; i < tam; i++)
-    {
-        for(x=0; x<tam; x++)
-        {
-
-            n = mn[i][x] + 48 ;
-            mc[i][x]= n;
-
-        }
-
-    }
-
-}
-
-
 void cargarMatrizNum(int m[][6], int tam)
 {
     int i, x, n;
@@ -62,7 +44,7 @@ void seleccionColor(int &c){
 }
 
 
-void mostrarJuego(char m[][6], char v[], int &p, int c)
+void mostrarJuego(int m[][6], char v[], int &p, int c)
 {
     rlutil::locate(2, 1);
     cout << v ;
@@ -124,46 +106,57 @@ void vida(int n)
 
 
 
-void comienzoJuego(char mc[][6], int mn[][6], int &p){
+void comienzoJuego(int mn[][6], int &p){
 
     int fila, columna, direccion;
     char operador;
     bool r;
 
-    cout << "Ingrese Numero de fila: ";
-    cin  >> fila;
 
-    cout << "Ingrese Numero de columna: ";
-    cin  >> columna;
+        cout << "Ingrese Numero de fila: ";
+        cin  >> fila;
 
-    cout << "Ingrese  Operacion a validar: ";
-    cin  >> operador;
+        cout << "Ingrese Numero de columna: ";
+        cin  >> columna;
 
-    cout << "Ingrese direccion: ";
-    cin  >> direccion;
+        cout << "Ingrese  Operacion a validar: ";
+        cin  >> operador;
 
-    fila--;
-    columna--;
+        cout << "Ingrese direccion: ";
+        cin  >> direccion;
 
-
-    r = validarDatos(mc,fila,columna,direccion);
+        fila--;
+        columna--;
 
 
-    if(r){
-        cout <<"true";
-    }else{
-        cout <<"false";
-    } //esto es solo para probar
+        r = validarDatos(mn,fila,columna,direccion);
+
+
+        if(r)
+        {
+            cout <<"true";
+        }
+        else
+        {
+            cout <<"La operacion no es valida."<<endl;
+            cout <<"!A perdido una pila!!! :("<<endl;
+            rlutil::anykey();
+            p--;
+        }
+
+
+
+
 }
 
 
-bool validarDatos(char mc[][6], int x, int y, int o){
+bool validarDatos(int mc[][6], int x, int y, int o){
 
     int fila2, fila3, columna2, columna3;
 
     cargarDireccion(o, x, y, fila2, columna2, fila3, columna3);
 
-    if ((mc[x][y] >= 48 && mc[x][y] <= 57) && (mc[fila2][columna2] >= 48 && mc[fila2][columna2] <= 57) && (mc[fila3][columna3] >= 48 && mc[fila3][columna3] <= 57 )   ){
+    if ((mc[x][y] >= 0 && mc[x][y] <= 9) && (mc[fila2][columna2] >= 0 && mc[fila2][columna2] <= 9) && (mc[fila3][columna3] >= 0 && mc[fila3][columna3] <= 9 )   ){
         return true;
     } else {
         return false;
