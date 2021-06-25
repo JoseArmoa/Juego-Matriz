@@ -111,7 +111,7 @@ void vida(int n)
 
 
 
-void comienzoJuego(int mn[][6], int &p){
+void comienzoJuego(int mn[][6], int &p , int &pts){
 
     int fila, columna, direccion, fila2, fila3, columna2, columna3;
     char operador;
@@ -143,12 +143,15 @@ void comienzoJuego(int mn[][6], int &p){
         {
            r = validarOperacion(mn, fila, columna, fila2, columna2, fila3, columna3, operador);
            if(r){
-                    cout << "True";
-                    rlutil::anykey();
+                    sumarPuntos(mn,pts,fila,columna,fila2,columna2,fila3,columna3);
+                    cout << "Felicidades ha sumado puntos";
+                    ponerNulo (mn,fila,columna,fila2,columna2,fila3,columna3);
+
+                rlutil::anykey();
                 } else {
                     cout <<"La operacion no es valida."<<endl;
                     cout <<"!A perdido una pila!!! :("<<endl;
-                    rlutil::anykey();
+                rlutil::anykey();
                     p--;
                 }
         }
@@ -269,4 +272,27 @@ bool validarOperacion(int m[][6], int f, int c, int f2, int c2, int f3, int c3, 
                     }
                 break;
         }
+}
+
+
+void sumarPuntos (int m[][6], int &p , int f , int c , int f2 , int c2 , int f3 , int c3){
+                p += m[f][c]+ m[f2][c2] + m[f3][c3];
+
+
+}
+
+
+void ponerNulo (int m[][6], int f , int c , int f2 , int c2 , int f3 , int c3 ){
+                m [f][c] = 99;
+                m [f2][c2] = 99;
+                m [f3][c3] = 99;
+}
+
+
+
+void mostrarEstadisticas (int vec[], string nombres[] ){
+        cout << "Jugador         Puntaje" << endl << endl;
+        cout << nombres [0]  << "         " << vec [0] << endl << endl;
+
+
 }

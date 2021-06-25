@@ -9,10 +9,14 @@ using namespace std;
 int main()
 {
     srand(time(0));
+    const int tam = 10;
     int opcion, pilas, color, puntaje;
     int matrizNumeros [6][6];
     char Usuario [30];
     cargarMatrizNum(matrizNumeros, 6);
+    int vecPuntaje [tam] = {};
+    string vecNombres [tam] ;
+    vecNombres [0] = {'Jugador'};
 
 
 
@@ -57,16 +61,20 @@ int main()
             rlutil::cls();
 
             while(pilas !=0){
-                matrizNumeros[2][3]= 99;
+
 
                 mostrarJuego(matrizNumeros,Usuario, pilas, color, puntaje);
-                comienzoJuego(matrizNumeros,pilas);
+                comienzoJuego(matrizNumeros,pilas,puntaje);
                 rlutil::cls();
             }
+            rlutil::locate(35,15);
+            cout << "Lo siento, te quedaste sin pilas :( " ;
+            rlutil::anykey();
 
 
             break;
         case 2:
+            mostrarEstadisticas (vecPuntaje , vecNombres);
             break;
         case 3:
             break;
